@@ -1352,7 +1352,8 @@ setTimeout(function () {
         pointers[0].x = e.offsetX;
         pointers[0].y = e.offsetY;
     });
-}, 100); // 2000 миллисекунд = 2 секунды
+}, 1000); // 2000 миллисекунд = 2 секунды
+
 canvas.addEventListener('touchmove', e => {
     e.preventDefault();
     const touches = e.targetTouches;
