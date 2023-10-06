@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="block-wrapper">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="title-block">
+            Hello
+        </div>
+        <div class="title-block-two">
+            how are u?
+        </div>
+        <div class="title-block-three">
+            i'm fine, and u?
+        </div>
+        <div class="title-block-four">
+            me too, thanks!
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".block").each(function (index) {
+                    var $block = $(this);
+                    $block.delay(200 * index).animate({
+                        width: "+=80vw",
+                        height: "+=80vw",
+                        borderWidth: "+=80",
+                        opacity: 1
+                    }, {
+                        duration: 1200,
+                        easing: 'easeInQuint',
+                        complete: function () {
+                            $block.animate({
+                                // width: "-=50",
+                                // height: "-=50",
+                                opacity: 0
+                            }, 500);
+                        }
+                    });
+                });
+            }, 600);
+        });
+    </script>
+
+</body>
+
+</html>
